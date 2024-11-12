@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>stand out.</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="destaque">stand out.</h1>
+            <nav>
+                <ul>
+                    <ol><a href="index.html"><strong>Home</strong></a></ol>
+                    <ol><a href="descubra.html"><strong>Descubra</strong></a></ol>
+                    <ol><a href="crie.html" ><strong>Crie</strong></a></ol>
+                    <ol><a href="conexoes.html" ><strong>Conexões</strong></a></ol>
+                    <ol><a href="perfil.html" ><strong>Seu Perfil</strong></a></ol>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <form name = media action =LOGIN.jsp method=get encType="multipart/form-data"> 
+            <!-- nao faz nada, so pra quando for ativar o botao por jsp -->
+            <table>
+                <tr><td>Imagem</td><td><input type = image size = 50 maxlength = 50 name = Imagem required></td></tr>
+                <!-- imagen pubicada, armazenar o import em uma variavel, assim que a pessoa clicar em um botao de visualização a imagem ira subir aqui -->
+                <tr><td>Postagem</td><td><input type = file name = Post required></td>
+                <td><input type = submit class="button" size = 50 maxlength = 50 name = Post value="Visualizar" required></td></tr>
+                <!-- subir arquivo -->
+                <tr><td>Legenda</td><td><input type = ratio size = 35 maxlength = 50 name = Opt1 placeholder=Legenda> </td></tr>  
+                <!-- add legenda -->
+                <tr><td><input type = submit class="button" size = 50 maxlength = 50 name = Publicar value="Publicar" required> </td></tr>
+                <!-- publicar -->
+            </table>
+        </form>  
+    </main>
+
+    <footer>
+        <div class="destaque">
+            <h2>stand<br>out.</h2>
+        </div>
+        <nav>
+            <ul>
+                <p>MARCA</p>
+                <ol><p>Sobre</p></ol>
+                <ol><p>Missão</p></ol>
+                <ol><p>Contato</p></ol>
+            </ul>
+        </nav>
+        <p class="termos">Todos os direitos reservados a empresa "stand out."<br>Termos e Condições | Privacidade</p>
+    </footer>
+    
+    <script src="efeito.js"></script>
+</body>
+</html>
