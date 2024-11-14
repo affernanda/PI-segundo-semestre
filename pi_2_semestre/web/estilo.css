@@ -1,9 +1,11 @@
+/*efeitos globais */
+
 @font-face {
     font-family: 'MinhaFonte';
     src: url('/fontes/TAN-NIMBUS.otf') format('opentype');
 }
 
-* { /* Essa linha são efeitos globais */
+* { 
     margin: 5px;
     padding: 5px;
     font-family: 'Poppins';
@@ -13,28 +15,37 @@ body {
     margin: 10px;
     padding: 10px;
     background-color: #f5f3ef;
-    font-size: 14px;
 }
+
+/*---------------------------------*/
+
+/*MENU*/
 
 header, main {
     border-top: 2px solid black; /*linha horizontal para separar o menu da pagina em si*/
 }
 
-.container {
-    display: flex;
-    justify-content: space-between; /*eu nao sei como, mas isso funciona pra deixar os links na direita e a imagem na esquerda*/
-    align-items: center; /* Centraliza os links no meio em relação a imagem */
+.destaqueCOMHOVER {
+    font-size: xxx-large;
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8; /* Opacidade inicial */
 }
 
-.container h1 {
-    font-family: 'MinhaFonte', sans-serif;
-    font-size: 48px;
-    font-weight: 600;
-    color: #000;
+.destaqueCOMHOVER:hover {
+    transform: scale(1.2); /* Aumenta o tamanho */
+    opacity: 1; /* Aumenta a opacidade */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul ol {
-    display: inline-block; /* Exibe os itens em linha */
+    display:inline-flex;
 }
 
 nav ul ol a {
@@ -46,56 +57,23 @@ nav ul ol a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
-footer {
-    background-color: black;
-    color: #f5f3ef;
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Espaça os itens */
-    padding: 10px; /* Adiciona um pouco de espaçamento interno */
-}
+/*---------------------------------*/
 
-footer nav ul ol{
-    display: block;
-    color: #454545;
-    list-style-type: none;
-}
-
-.termos{
-    border-bottom: 2px solid #454545; /*linha horizontal para separar o menu da pagina em si*/
-    background-color: black;
-    color: #f5f3ef;
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Espaça os itens */
-    padding: 10px; /* Adiciona um pouco de espaçamento interno */
-    align-items: end;
-    font-size: xx-small;
-}
-
-.segmento1 {
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Espaça os itens */
-    font-size: xx-large;
-    align-items: center;
-}
-
-.segmento2 {
-    display: flex; /* Habilita Flexbox */
-    align-items:start;
-    justify-content: space-between;
-    max-width: 10000px; /* Ajuste conforme necessário */
-    margin: 0 auto; /* Centraliza o container */
-    padding: 20px; /* Espaçamento interno */
-}
-
-.textovertical {
-    flex: 1; /* O texto ocupa o espaço restante */
-    margin-right: 20px; /* Espaço entre texto e imagem */
-}
+/*ESTILOS DE BOTÕES*/
 
 .button {
-    background-color: #000;
-    color: #f5f3ef;
-    border-radius: 10%;  
+    color: white;
+    border-radius: 5px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: black;
+    text-decoration:none;
+}
+
+.button:hover {
+    text-decoration:underline;
 }
 
 .button2 {
@@ -103,6 +81,40 @@ footer nav ul ol{
     color: #f5f3ef;  
     width: 150px;
     height: 50px;
+    color: white;
+    border-radius: 5px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: black;
+    text-decoration:none;
+    font-size:medium;
+}
+
+/*---------------------------------*/
+
+/* CLASS PARA USAR EM TEXTOS*/
+
+.fundopreto {
+    color: white;
+    border-radius: 5px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: black;
+}
+
+.fundocinza {
+    color: white;
+    background-color: #414141;
+    border-radius: 5px;
+    border-top: 2px solid #414141;
+    border-bottom: 2px solid #414141;
+    border-left: 2px solid #414141;
+    border-right: 2px solid #414141;
+    background-color: #414141;
 }
 
 .destaque {
@@ -112,31 +124,54 @@ footer nav ul ol{
 
 .destaque2 {
     font-size: xxx-large;
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Espaça os itens */
-    padding: 10px; /* Adiciona um pouco de espaçamento interno */
+    display: flex;
+    justify-content: space-between; 
+    padding: 10px; 
 }
 
 .destaque3 {
     font-size: large;
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Espaça os itens */
-    padding: 10px; /* Adiciona um pouco de espaçamento interno */
+    display: flex; 
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .textopadrao {
     font-size: medium;
     font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex; /* Ativa o Flexbox */
-    justify-content: space-between; /* Espaça os itens */
-    padding: 10px; /* Adiciona um pouco de espaçamento interno */
+    display: flex;
+    justify-content: space-between; 
 }
+
+/*---------------------------------*/
+
+
+
+/*PARTE 1 INDEX: COMPARTILHE*/
+
+.segmento1 { 
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+    align-items: center;
+} /*edições do bloco de texto*/
+
+.segmento2 {
+    display: flex;
+    align-items:start;
+    justify-content: space-between;
+    margin: 0 auto; 
+    padding: 20px;
+} /*edições da imagem azul*/
+
+/*---------------------------------*/
+
+
 
 .cortarfoto {
     justify-content: center;
-    height: 470px; /* Altura do quadrado */
-    overflow: hidden; /* Esconde o que ultrapassa */
+    height: 470px;
+    overflow: hidden;
     align-items: center;
     padding: 20px;
     max-width: 564px;
@@ -152,7 +187,7 @@ footer nav ul ol{
     display: flex;
 }
 
-.block2 {
+.feedback {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
@@ -164,4 +199,96 @@ footer nav ul ol{
     align-content: start;
     display: inline;
     justify-content: space-between
+}
+
+
+/*FOOTER ESTILO*/
+
+footer {
+    background-color: black;
+    color: #f5f3ef;
+    display: flex; /* Ativa o Flexbox */
+    justify-content: space-between; /* Espaça os itens */
+    padding: 10px; /* Adiciona um pouco de espaçamento interno */
+}
+
+footer nav ul ol{
+    display:flex;
+}
+
+footer nav ul ol a{
+    color: #454545;
+    list-style-type: none;
+}
+
+.termos{
+    border-bottom: 2px solid #454545; /*linha horizontal para separar o menu da pagina em si*/
+    background-color: black;
+    color: #f5f3ef;
+    display: flex; /* Ativa o Flexbox */
+    justify-content: space-between; /* Espaça os itens */
+    padding: 10px; /* Adiciona um pouco de espaçamento interno */
+    align-items: end;
+    font-size: xx-small;
+}
+
+/*CARROSSEL*/
+
+.carrossel {
+    position: relative;
+    max-width: 80%; /*Largura do carrossel */
+    max-height: 40%;
+    margin: 0 auto;
+    padding: 5%;
+    background-color: #f5f5f552;
+    overflow: hidden;
+}
+
+.imagens {
+    display: flex;
+    transition: transform 0.5s ease; /* Transição suave */
+    margin: 0 auto;
+}
+
+.linha {
+    display: flex; /* Imagens em linha */
+    justify-content: space-between;
+    margin: 0 auto; 
+    padding-right: 35%;
+}
+
+.linha img {
+    width: 50%;
+    padding: 2%;
+    height: auto;
+}
+
+img {
+    border-radius: 5%;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
