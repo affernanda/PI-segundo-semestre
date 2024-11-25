@@ -17,52 +17,36 @@ body {
 /*menu vertical*/
 
 .containervertical {
-    display: flex;
-    flex-direction: column;  /*Isso garante que os itens dentro da containervertical fiquem empilhados verticalmente */
+    width: 20%;
     height: 100vh;
-}
-
-.coluna-esquerda {
-    width: 15%;
-    height: 100%;
     background-color: #efb810;
-    color: white;
+    color: #F5F5F5;
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow-y: auto;
 }
 
 .menu-vertical ol {
-    margin-bottom: 30%;
+    margin-bottom: 5%;
 }
 
 .menu-vertical a {
     color: white;
     text-decoration: none;
     font-size: 100%;
-    display: block;
-    padding: 2%;
 }
 
-.menu-vertical a:hover {
-    color:#efb810;
-    background-color: #F5F5F5;
-    border-radius: 4%;
-    border-width: 0.5%;
-    border: #F5F5F5;
-}
+/*main*/
 
-/*perfil cadastrado*/
-
-.parte1 {
+.main {
     background-color: #fff;
-    padding: 10%;
+    margin-left: 20%;  /* Para garantir que comece logo após o menu */
     color: #000000;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 auto;
-    height:10%;
+    height:40vh;
+    padding: 20px;
+    padding-bottom: 5%;
 }
 
 .perfil-img {
@@ -70,27 +54,6 @@ body {
     height: 10%;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.perfil-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-/**/
-
-.parte2 {
-    background-color: #f5f3ef;  /* Cor de fundo semelhante ao fundo da página */
-    padding: 20px;
-    color: #000000;
-    width: 85%;  /* A largura é menor que a da coluna esquerda */
-    margin-left: 15%;  /* Para garantir que comece logo após o menu */
-    margin-top: 20px;  /* Espaçamento superior para separar da parte1 */
-}
-
-.parte2 p {
-    font-size: 1.2em;  /* Tamanho de fonte maior para destacar o conteúdo */
-    line-height: 1.6;  /* Espaçamento entre as linhas */
 }
 
 /*GALERIA*/
