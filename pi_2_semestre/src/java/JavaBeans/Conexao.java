@@ -12,7 +12,7 @@ public class Conexao {
     public String sql; // variável que armazena os comandos SQL
     public PreparedStatement ps; // objeto que prepara o sql
     public ResultSet tab; // Armazena um conjunto de Registros
-    public String MeuBanco = "usuarios"; // Nome do banco a ser criado
+    public String MeuBanco = "contas"; // Nome do banco a ser criado
     public String servidor = "jdbc:mysql://localhost:3306"; // caminho do servidor SQL
     public String usuario = "root"; // Login nome do usuario do banco SQL
     public String senha = ""; // Senha do Banco SQL
@@ -22,7 +22,6 @@ public class Conexao {
 	 * Na variável statusSQl conterá null quando não tiver erros Mas quando haver
 	 * erros conterá a mensagem de erro capturada Pela excessão da clausula try.
      */
-
     public Conexao() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Carrega o driver JDBC
@@ -40,7 +39,7 @@ public class Conexao {
 
     public void criarBanco() {
         try {
-            sql = "create database if not exists " + this.MeuBanco; // armazena sql
+            sql = "create database if not exists " + this.MeuBanco;// armazena sql
             ps = con.prepareStatement(sql); // prepara o comando
             ps.executeUpdate(); // Executa o comando SQL
 
@@ -49,15 +48,25 @@ public class Conexao {
             ps.executeUpdate(); // Executa o comando SQL dentro do servidor
 
             sql = "create table if not exists usuarios ( "
-                    + "pkuser int AUTO_INCREMENT," 
+                    + "pkuser int AUTO_INCREMENT,"
                     + "nome varchar(40) not null,"
-                    + "idade varchar(5) not null," 
-                    + "email varchar(40) not null," 
+                    + "idade varchar(5) not null,"
+                    + "email varchar(40) not null,"
                     + "senha varchar(20) not null,"
+                    + "foto longblob,"
                     + "PRIMARY KEY ( pkuser ) ) ";
             ps = con.prepareStatement(sql);
             ps.executeUpdate(); // Executa o comando SQL dentro do servidor
 
+            sql = "create table if not exists publicacoes ("
+                    + "pkpublicacao INT AUTO_INCREMENT,"
+                    + "pkuser INT NOT NULL,"
+                    + "foto longblob,"
+                    + "legenda VARCHAR(100) NOT NULL,"
+                    + "PRIMARY KEY (pkpublicacao),"
+                    + "CONSTRAINT fk_publicacoes_usuarios FOREIGN KEY (pkuser) REFERENCES usuarios(pkuser) )";
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
             statusSQL = null; // Coloca null nas operações bem sucedidas
 
         } catch (SQLException err) {
