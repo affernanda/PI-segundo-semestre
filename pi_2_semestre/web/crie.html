@@ -16,7 +16,6 @@
                 <ul>
                     <ol><a href="descubra.html"><strong>Descubra</strong></a></ol>
                     <ol><a href="crie.html" ><strong>Crie</strong></a></ol>
-                    <ol><a href="conexoes.html" ><strong>Conexões</strong></a></ol>
                     <ol><a href="perfil.html" class="fundocinza"><strong>Login</strong></a></ol>
                     <ol><a href="perfil.html" class="fundopreto"><strong>Cadastre-se</strong></a></ol>
                 </ul>
@@ -29,11 +28,10 @@
         <form name = media action =LOGIN.jsp method=get encType="multipart/form-data"> 
             <!-- nao faz nada, so pra quando for ativar o botao por jsp -->
             <table>
-                <tr><td>Imagem</td><td><input type = image size = 50 maxlength = 50 name = Imagem required></td></tr>
-                <!-- imagen pubicada, armazenar o import em uma variavel, assim que a pessoa clicar em um botao de visualização a imagem ira subir aqui -->
-                <tr><td>Postagem</td><td><input type = file name = Post required></td>
-                <td><input type = submit class="button" size = 50 maxlength = 50 name = Post value="Visualizar" required></td></tr>
-                <!-- subir arquivo -->
+                <div id="preview-container">
+                    <img id="preview" src="" alt="Prévia da Imagem" style="display: none; width: 200px; margin-top: 10px;">
+                </div>
+                <tr><td>Postagem</td><td><input type = file name = Post required id="file-input" accept="image/*" onchange="previewImage(event)"></td>
                 <tr><td>Legenda</td><td><input type = ratio size = 35 maxlength = 50 name = Opt1 placeholder=Legenda> </td></tr>  
                 <!-- add legenda -->
                 <tr><td><input type = submit class="button" size = 50 maxlength = 50 name = Publicar value="Publicar" required> </td></tr>
@@ -42,6 +40,29 @@
         </form>  
     </main>
 
+    <script>
+        // Função para gerar a prévia da imagem
+        function previewImage(event) {
+            const file = event.target.files[0];  // Captura o arquivo selecionado
+            const preview = document.getElementById('preview');  // Elemento da imagem para exibir a prévia
+            
+            // Verifica se o arquivo é uma imagem
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                
+                // Quando o arquivo for carregado, exibe a prévia
+                reader.onload = function(e) {
+                    preview.src = e.target.result;  // Atribui a URL da imagem ao src da tag <img>
+                    preview.style.display = 'block';  // Torna a imagem visível
+                };
+                
+                // Lê o arquivo como uma URL
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';  // Se não for imagem, esconde a prévia
+            }
+        }
+    </script>
  
     <footer>
         <div class="destaque">
